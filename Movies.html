@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies</title>
+
+    <!-- ts particles -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.11/tsparticles.min.js"></script>
+
+    <link rel="stylesheet" href="./styles/movies.css" />
+
+    <!-- bootstrap min css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <!-- google fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="particles"></div>
+    <div class="particle-container">
+      <!-- Navbar  -->
+      <nav class="navbar navbar-dark bg-danger bg-gradient fixed-top py-2 px-2">
+        <div class="container-fluid container d-flex justify-content-between">
+          <div class="nava">
+            <button
+              class="navbar-toggler border-light"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasDarkNavbar"
+              aria-controls="offcanvasDarkNavbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a
+              href="#"
+              class="navbar-brand m-2 text-light"
+              style="font-family: Lucida Handwriting, cursive"
+              >Luffy TV
+            </a>
+          </div>
+          <div class="navSearch">
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="What would you like to watch today ?"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-light" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+          <button
+            class="navbar-toggler navbar-toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <div class="navb">
+            <a
+              class="navbar-brand"
+              href="#"
+              style="font-family: Lucida Handwriting, cursive"
+              >Anime</a
+            >
+            <a
+              class="navbar-brand"
+              href="#"
+              style="font-family: Lucida Handwriting, cursive"
+              >Music</a
+            >
+            <a
+              class="navbar-brand"
+              href="#"
+              style="font-family: Lucida Handwriting, cursive"
+              >K-Drama</a
+            >
+          </div>
+          <div
+            class="offcanvas offcanvas-start text-bg-dark"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5
+                class="offcanvas-title text-ligth"
+                id="offcanvasDarkNavbarLabel"
+                style="font-family: Lucida Handwriting, cursive"
+              >
+                Luffy TV
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <form class="d-flex mt-3" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- content of navbar -->
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div
+          class="bg-danger bg-gradient p-4 mt-5 d-flex justify-content-center"
+        >
+          <input
+            class="form-control me-2 w-50"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </div>
+      </div>
+
+      <div class="container container3">
+        <section>
+          <marquee
+            behavior="alternate"
+            onMouseOver="this.stop()"
+            onMouseOut="this.start()"
+          >
+            <img src="assets/naruto.png" />
+            <img src="assets/oenpiece.jpe" />
+            <img src="assets/jjk.jpg" />
+            <img src="assets/saitan.jpg" />
+            <img src="assets/Fast&Furious.jpeg" />
+            <img src="assets/dark.jpg" />
+            <img src="assets/pathan.jpg" />
+          </marquee>
+        </section>
+      </div>
+
+      <div class="container">
+        <div
+          class="d-flex justify-content-between flex-wrap align-items-center"
+        >
+          <div class="p-3 d-flex trendingbox m-1">
+            <h6 class="text-light">Anime</h6>
+          </div>
+          <div class="p-3 d-flex trendingbox m-1">
+            <h6 class="text-light">Hollywood</h6>
+          </div>
+          <div class="p-3 d-flex trendingbox m-1">
+            <h6 class="text-light">Bollywood</h6>
+          </div>
+          <div class="p-3 d-flex trendingbox m-1">
+            <h6 class="text-light">Music</h6>
+          </div>
+          <div class="p-3 d-flex trendingbox m-1">
+            <h6 class="text-light">K-Drama</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-3 mb-3">
+        <div class="d-flex text-danger" style="cursor: pointer">
+          <i class="fa-solid fa-box m-1" id="one" style="font-size: 20px"></i>
+          <i
+            class="fa-solid fa-table-cells-large m-1"
+            id="two"
+            style="font-size: 20px"
+          ></i>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <form class="d-flex mt-4" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-danger" type="submit">Search</button>
+            </form>
+            <div class="d-flex justify-content-between flex-wrap">
+              <div class="p-3 d-flex trendbox mt-4">
+                <h6 class="text-light">ALL</h6>
+              </div>
+              <div class="p-3 d-flex trendbox mt-4">
+                <h6 class="text-light">Action</h6>
+              </div>
+              <div class="p-3 d-flex trendbox mt-4">
+                <h6 class="text-light">Comedy</h6>
+              </div>
+              <div class="p-3 d-flex trendbox mt-4">
+                <h6 class="text-light">Love</h6>
+              </div>
+              <div class="p-3 d-flex trendbox mt-4">
+                <h6 class="text-light">Romance</h6>
+              </div>
+              <div class="p-3 d-flex trendbox mt-4">
+                <h6 class="text-light">Creepy</h6>
+              </div>
+              <div class="p-3 d-flex trendbox mt-4">
+                <h6 class="text-light">War</h6>
+              </div>
+              <div class="p-3 d-flex trendbox mt-4">
+                <h6 class="text-light">Motivation</h6>
+              </div>
+            </div>
+            <h3 class="text-danger mt-4">Most Watched</h3>
+            <div class="container">
+              <div
+                class="card bg-black bg-gradient mt-4 border-light border-1"
+                id="carring"
+              >
+                <img src="assets/jjk.jpg" class="card-img-top" alt="..." />
+                <div class="carring-body card-body">
+                  <div class="text-section card-title">
+                    <p class="text-light">
+                      <a
+                        href="movie_detail.html"
+                        class="text-decoration-none text-light"
+                      >
+                        The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                        720p & 480p HD Online Stream | Full Movie
+                      </a>
+                    </p>
+                  </div>
+                  <div class="cta-section"></div>
+                </div>
+              </div>
+              <div class="card bg-black bg-gradient mt-4" id="carring">
+                <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                <div class="carring-body card-body">
+                  <div class="text-section card-title">
+                    <p class="text-light">
+                      The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p
+                      & 480p HD Online Stream | Full Movie
+                    </p>
+                  </div>
+                  <div class="cta-section"></div>
+                </div>
+              </div>
+              <div class="card bg-black bg-gradient mt-4" id="carring">
+                <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                <div class="carring-body card-body">
+                  <div class="text-section card-title">
+                    <p class="text-light">
+                      The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p
+                      & 480p HD Online Stream | Full Movie
+                    </p>
+                  </div>
+                  <div class="cta-section"></div>
+                </div>
+              </div>
+              <div class="card bg-black bg-gradient mt-4" id="carring">
+                <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                <div class="carring-body card-body">
+                  <div class="text-section card-title">
+                    <p class="text-light">
+                      The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p
+                      & 480p HD Online Stream | Full Movie
+                    </p>
+                  </div>
+                  <div class="cta-section"></div>
+                </div>
+              </div>
+              <div class="card bg-black bg-gradient mt-4" id="carring">
+                <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                <div class="carring-body card-body">
+                  <div class="text-section card-title">
+                    <p class="text-light">
+                      The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p
+                      & 480p HD Online Stream | Full Movie
+                    </p>
+                  </div>
+                  <div class="cta-section"></div>
+                </div>
+              </div>
+              <div class="card bg-black bg-gradient mt-4" id="carring">
+                <img src="assets/jjk.jpg" class="card-img-top" alt="..." />
+                <div class="carring-body card-body">
+                  <div class="text-section card-title">
+                    <p class="text-light">
+                      The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p
+                      & 480p HD Online Stream | Full Movie
+                    </p>
+                  </div>
+                  <div class="cta-section"></div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-danger">More...</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-7 offset-md-1">
+            <!-- imp -->
+            <div id="first">
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    <a
+                      href="movie_detail.html"
+                      class="text-decoration-none text-dark"
+                    >
+                      The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p
+                      & 480p HD Online Stream | Full Movie
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+              <div class="card m-1" style="width: 14rem">
+                <img
+                  src="assets/dark.jpg"
+                  class="card-img-top zoom-effect"
+                  alt="..."
+                  style="height: 10rem"
+                />
+                <div class="card-body">
+                  <p class="card-text fw-bold">
+                    The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)] 720p &
+                    480p HD Online Stream | Full Movie
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="container" id="second">
+              <div class="container">
+                <div
+                  class="card bg-danger bg-transparent mt-4 border-1 border-black"
+                  id="car"
+                >
+                  <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                  <div class="car-body card-body">
+                    <div class="text-section card-title">
+                      <p class="text-light">
+                        <a
+                          href="movie_detail.html"
+                          class="text-decoration-none text-light"
+                        >
+                          The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                          720p & 480p HD Online Stream | Full Movie
+                        </a>
+                      </p>
+                    </div>
+                    <div class="cta-section"></div>
+                  </div>
+                </div>
+                <div
+                  class="card bg-danger bg-transparent mt-4 border-1 border-black"
+                  id="car"
+                >
+                  <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                  <div class="car-body card-body">
+                    <div class="text-section card-title">
+                      <p class="text-light">
+                        The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                        720p & 480p HD Online Stream | Full Movie
+                      </p>
+                    </div>
+                    <div class="cta-section"></div>
+                  </div>
+                </div>
+                <div
+                  class="card bg-danger bg-transparent mt-4 border-1 border-black"
+                  id="car"
+                >
+                  <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                  <div class="car-body card-body">
+                    <div class="text-section card-title">
+                      <p class="text-light">
+                        The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                        720p & 480p HD Online Stream | Full Movie
+                      </p>
+                    </div>
+                    <div class="cta-section"></div>
+                  </div>
+                </div>
+                <div
+                  class="card bg-danger bg-transparent mt-4 border-1 border-black"
+                  id="car"
+                >
+                  <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                  <div class="car-body card-body">
+                    <div class="text-section card-title">
+                      <p class="text-light">
+                        The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                        720p & 480p HD Online Stream | Full Movie
+                      </p>
+                    </div>
+                    <div class="cta-section"></div>
+                  </div>
+                </div>
+                <div
+                  class="card bg-danger bg-transparent mt-4 border-1 border-black"
+                  id="car"
+                >
+                  <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                  <div class="car-body card-body">
+                    <div class="text-section card-title">
+                      <p class="text-light">
+                        The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                        720p & 480p HD Online Stream | Full Movie
+                      </p>
+                    </div>
+                    <div class="cta-section"></div>
+                  </div>
+                </div>
+                <div
+                  class="card bg-danger bg-transparent mt-4 border-1 border-black"
+                  id="car"
+                >
+                  <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                  <div class="car-body card-body">
+                    <div class="text-section card-title">
+                      <p class="text-light">
+                        The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                        720p & 480p HD Online Stream | Full Movie
+                      </p>
+                    </div>
+                    <div class="cta-section"></div>
+                  </div>
+                </div>
+                <div
+                  class="card bg-danger bg-transparent mt-4 border-1 border-black"
+                  id="car"
+                >
+                  <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                  <div class="car-body card-body">
+                    <div class="text-section card-title">
+                      <p class="text-light">
+                        The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                        720p & 480p HD Online Stream | Full Movie
+                      </p>
+                    </div>
+                    <div class="cta-section"></div>
+                  </div>
+                </div>
+                <div
+                  class="card bg-danger bg-transparent mt-4 border-1 border-black"
+                  id="car"
+                >
+                  <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                  <div class="car-body card-body">
+                    <div class="text-section card-title">
+                      <p class="text-light">
+                        The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                        720p & 480p HD Online Stream | Full Movie
+                      </p>
+                    </div>
+                    <div class="cta-section"></div>
+                  </div>
+                </div>
+                <div
+                  class="card bg-danger bg-transparent mt-4 border-1 border-black"
+                  id="car"
+                >
+                  <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                  <div class="car-body card-body">
+                    <div class="text-section card-title">
+                      <p class="text-light">
+                        The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                        720p & 480p HD Online Stream | Full Movie
+                      </p>
+                    </div>
+                    <div class="cta-section"></div>
+                  </div>
+                </div>
+                <div
+                  class="card bg-danger bg-transparent mt-4 border-1 border-black"
+                  id="car"
+                >
+                  <img src="assets/dark.jpg" class="card-img-top" alt="..." />
+                  <div class="car-body card-body">
+                    <div class="text-section card-title">
+                      <p class="text-light">
+                        The Mummy Murders (2024) WEB-HD [Hindi (Voice Over)]
+                        720p & 480p HD Online Stream | Full Movie
+                      </p>
+                    </div>
+                    <div class="cta-section"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <nav aria-label="Page navigation" class="mt-5">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <a class="page-link text-danger">Previous</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link text-black" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link text-black" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link text-black" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link text-success" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fotter -->
+      <footer class="footer-section container3">
+        <div class="container">
+          <div class="footer-content pt-5 pb-5">
+            <div class="row">
+              <div class="col-xl-4 col-lg-4 mb-50">
+                <div class="footer-widget">
+                  <div class="footer-logo">
+                    <a href="index.html"
+                      ><img src="assets/logo.png" class="img-fluid" alt="logo"
+                    /></a>
+                  </div>
+                  <div class="footer-text">
+                    <p>
+                      Lorem ipsum dolor sit amet, consec tetur adipisicing elit,
+                      sed do eiusmod tempor incididuntut consec tetur
+                      adipisicing elit,Lorem ipsum dolor sit amet.
+                    </p>
+                  </div>
+                  <div class="footer-social-icon mb-5">
+                    <span>Follow us</span>
+                    <a href="#"
+                      ><i class="fab fa-facebook-f facebook-bg"></i
+                    ></a>
+                    <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                    <a href="#"
+                      ><i class="fab fa-google-plus-g google-bg"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                <div class="footer-widget">
+                  <div class="footer-widget-heading">
+                    <h3>Useful Links</h3>
+                  </div>
+                  <ul>
+                    <li><a href="#">Anime</a></li>
+                    <li><a href="#">Movie</a></li>
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">K-Drama</a></li>
+                    <li><a href="#">Hollywood</a></li>
+                    <li><a href="#">Bollywood</a></li>
+                    <li><a href="#">18+</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Latest News</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                <div class="footer-widget">
+                  <div class="footer-widget-heading">
+                    <h3>Subscribe</h3>
+                  </div>
+                  <div class="footer-text mb-25">
+                    <p>
+                      Don’t miss to subscribe to our new feeds, kindly fill the
+                      form below.
+                    </p>
+                  </div>
+                  <div class="subscribe-form">
+                    <form action="#">
+                      <input type="text" placeholder="Email Address" />
+                      <button><i class="fab fa-telegram-plane"></i></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      tsParticles.load("particles", {
+        particles: {
+          number: {
+            value: 80,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: [
+              "#BD10E0",
+              "#B8E986",
+              "#50E3C2",
+              "#FFD300",
+              "#E86363",
+              "#42b883",
+              "#152744",
+              "#4ef037",
+            ],
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#b6b2b2",
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false,
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#4ef037",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
+    <script src="./scripts/movies.js"></script>
+
+    <!--popper min js  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- bootstarp min js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+h1 {
+  font-family: "Lucida Handwriting", cursive;
+}
+
+h3 {
+  font-family: "Lucida Handwriting", cursive;
+}
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    115deg,
+    rgb(0, 0, 0) 5.8%,
+    rgb(178, 14, 14) 112.6%
+  );
+}
+
+.navSearch {
+  width: 30rem;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+.container3 {
+  margin-top: 100px;
+}
+
+.container2 {
+  margin-top: 50px;
+}
+
+.zoom-effect {
+  transition: transform 0.5s ease;
+}
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
+
+.card {
+  overflow: hidden;
+}
+
+.card p {
+  cursor: pointer;
+}
+
+.card p:hover {
+  text-decoration: underline;
+}
+
+.trendbox {
+  border-radius: 10px;
+  border: 1px solid red;
+}
+
+.download {
+  cursor: pointer;
+}
+
+.download:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.trendbox:hover {
+  background-color: #dc3545;
+  cursor: pointer;
+}
+
+/* marques listing */
+section {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 67px;
+}
+
+marquee {
+  height: 300px;
+  width: 100%;
+}
+
+img {
+  height: 300px;
+}
+
+/* Fotter */
+ul {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .footer-section {
+    background: #110002;
+    position: relative;
+  }
+  .cta-text span {
+    color: #fafafa;
+    font-size: 15px;
+  }
+  .footer-content {
+    position: relative;
+    z-index: 2;
+  }
+  .footer-pattern img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 330px;
+    background-size: cover;
+    background-position: 100% 100%;
+  }
+  .footer-logo {
+    margin-bottom: 30px;
+  }
+  .footer-logo img {
+    max-width: 200px;
+  }
+  .footer-text p {
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 28px;
+  }
+  .footer-social-icon span {
+    color: #fef6f6;
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+  }
+  .footer-social-icon a {
+    color: #ffecec;
+    font-size: 16px;
+    margin-right: 15px;
+  }
+  .footer-social-icon i {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+  }
+  .facebook-bg {
+    background: #3b5998;
+  }
+  .twitter-bg {
+    background: #55acee;
+  }
+  .google-bg {
+    background: #3944dd;
+  }
+  .footer-widget-heading h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .footer-widget-heading h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    height: 2px;
+    width: 50px;
+    background: #ff5e14;
+  }
+  .footer-widget ul li {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin-bottom: 12px;
+  }
+  .footer-widget ul li a:hover {
+    color: #ff5e14;
+  }
+  .footer-widget ul li a {
+    color: #fffbfb;
+    text-transform: capitalize;
+  }
+  .subscribe-form {
+    position: relative;
+    overflow: hidden;
+  }
+  .subscribe-form input {
+    width: 100%;
+    padding: 14px 28px;
+    background: #2e2e2e;
+    border: 1px solid #2e2e2e;
+    color: #fff;
+  }
+  .subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+  }
+  .subscribe-form button i {
+    color: #ffffff;
+    font-size: 22px;
+    transform: rotate(-6deg);
+  }
+  .copyright-area {
+    background: #202020;
+    padding: 25px 0;
+  }
+  .copyright-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #fbf4f4;
+  }
+  .copyright-text p a {
+    color: #ff5e14;
+  }
+  .footer-menu li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .footer-menu li:hover a {
+    color: #ff5e14;
+  }
+  .footer-menu li a {
+    font-size: 14px;
+    color: #ffffff;
+  }
+  
+
+@media (min-width: 320px) and (max-width: 479px) {
+  .navSearch {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navb {
+    display: none;
+  }
+}
+@media (min-width: 480px) and (max-width: 599px) {
+  .navSearch {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+  .navb {
+    display: none;
+  }
+}
+@media (min-width: 200px) and (max-width: 800px) {
+  .navSearch {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+  .navb {
+    display: none;
+  }
+}
